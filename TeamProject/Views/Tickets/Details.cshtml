@@ -1,0 +1,50 @@
+﻿@model TeamProject.Models.Ticket
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Ticket</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Employee.EmployeeName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Employee.EmployeeName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RequestListingId)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RequestListingId)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateAssigned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateAssigned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Description)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Description)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.TicketsId }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

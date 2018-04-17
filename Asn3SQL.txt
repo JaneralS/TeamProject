@@ -1,0 +1,36 @@
+-- Employee table--------------------------------------
+INSERT INTO Employee  VALUES ('EP1', 'Yongjia sun')
+INSERT INTO Employee  VALUES ('EP2', 'Tizhen Shi')
+INSERT INTO Employee  VALUES ('EP3',  'Karl Hermes')
+INSERT INTO Employee  VALUES ('EP4',  'Andy Gerwin')
+INSERT INTO Employee  VALUES ('EP5', 'Robert Smith')
+INSERT INTO Employee  VALUES ('EP6',  'Sean Johnson')
+INSERT INTO Employee  VALUES ('EP7', 'Mesbah Ahmed')
+
+SELECT * FROM Employee
+--------------------------------------------------------------------------
+-- Customer table--------------------------------------
+INSERT INTO Customer  VALUES ('CUMR1', 'Wendy Lee', '1017 Shadow Ln, Toledo, OH, 43615', '465-204-0933')
+INSERT INTO Customer  VALUES ('CUMR2', 'Songjia Song','235 Linden Ln, Toledo, OH, 43615', '419-232-0212'
+INSERT INTO Customer  VALUES ('CUMR3', 'Leo Gerwin', '4321 Maple Ln, Toledo, OH, 43615', '476-245-0233')
+INSERT INTO Customer  VALUES ('CUMR4', 'Yilin Liu','865 Hilltop Ln, Toledo, OH, 43615', '476-266-0567')
+INSERT INTO Customer  VALUES ('CUMR5', 'Zhuohao Liu','354 Larkspur Ln, Toledo, OH, 43615', '443-289-886')
+
+SELECT * FROM Customer
+--------------------------------------------------------------------------
+-- RequestList--------------------------------------
+INSERT INTO RequestList  VALUES ('1', 'CUMR1', 'Apple', 'MacBook Pro', '2017-11-02')
+INSERT INTO RequestList  VALUES ('2', 'CUMR2','Apple', 'Mackbook Air','2018-03-10')
+INSERT INTO RequestList  VALUES ('2', 'CUMR3', 'Dell', 'XPS-13', '2017-08-01')
+INSERT INTO RequestList  VALUES ('4', 'CUMR4','Microsoft', 'Suface Pro', '2018-01-05')
+INSERT INTO RequestList  VALUES ('5', 'CUMR5','Lenovo', 'ideapad 320','2018-01-12')
+
+SELECT * FROM RequestList
+--------------------------------------------------------------------------
+-- Ticket--------------------------------------
+INSERT INTO Ticket  VALUES ('T1', '1', 'EP1', '2017-11-02',' Screen repair')
+INSERT INTO Ticket  VALUES ('T2', '2','EP2', '2018-03-10','Exchange it to the New Model')
+INSERT INTO Ticket  VALUES ('T2', '3', 'EP3', '2017-08-01', 'Hard Dish replacement')
+INSERT INTO Ticket  VALUES ('T4', '4','EP4', '2018-01-05','CPU is not work')
+INSERT INTO Ticket  VALUES ('T5', '5','EP5', '2018-01-12',Need to update software to windows 10')
+SELECT * FROM Ticket
