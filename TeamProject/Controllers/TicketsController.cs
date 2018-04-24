@@ -53,6 +53,18 @@ namespace TeamProject.Controllers
         {
             if (ModelState.IsValid)
             {
+                Ticket theTicket = db.Tickets.Find(ticket.TicketsId);
+                if (theTicket != null) // if found
+                {
+                    // set error message to be sent to the View
+                    ModelState.AddModelError("TicketsID", "Sorry, TicketsID already exists, try some other value");
+                    // send the submitted data back to the view
+                    return View(ticket);
+
+                }
+            }
+            else
+            {
                 db.Tickets.Add(ticket);
                 db.SaveChanges();
                 return RedirectToAction("Index");

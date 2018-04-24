@@ -51,14 +51,25 @@ namespace TeamProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Employees.Add(employee);
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                Employee theEmployee = db.Employees.Find(employee.EmployeeID);
+                if (theEmployee != null) // if found
+                {
+                    // set error message to be sent to the View
+                    ModelState.AddModelError("EmployeeID", "Sorry, EmployeeID already exists, try some other value");
+                    // send the submitted data back to the view
+                    return View(employee);
+
+                }
+                else
+                {
+                    db.Employees.Add(employee);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
             }
-
-            return View(employee);
+                return View(employee);
+            
         }
-
         // GET: Employees/Edit/5
         public ActionResult Edit(string id)
         {

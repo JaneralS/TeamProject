@@ -53,6 +53,18 @@ namespace TeamProject.Controllers
         {
             if (ModelState.IsValid)
             {
+                RequestList theRequestList = db.RequestLists.Find(requestList.RequestId);
+                if (theRequestList != null) // if found
+                {
+                    // set error message to be sent to the View
+                    ModelState.AddModelError("RequestID", "Sorry, RequestID already exists, try some other value");
+                    // send the submitted data back to the view
+                    return View(requestList);
+
+                }
+            }
+            else
+            {
                 db.RequestLists.Add(requestList);
                 db.SaveChanges();
                 return RedirectToAction("Index");
