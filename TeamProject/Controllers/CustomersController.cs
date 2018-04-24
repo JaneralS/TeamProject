@@ -51,13 +51,24 @@ namespace TeamProject.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.Customers.Add(customer);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
+                Customer theCustomer = db.Customers.Find(customer.CustomerID);
+                if (theCustomer != null) // if found
+                {
+                    // set error message to be sent to the View
+                    ModelState.AddModelError("CustomerID", "Sorry, CustomerID already exists, try some other value");
+                    // send the submitted data back to the view
+                    return View(customer);
 
+                }
+                else
+                {
+                    db.Customers.Add(customer);
+                    db.SaveChanges();
+                    return RedirectToAction("Index");
+                }
+            }
             return View(customer);
-        }
+           }
 
         // GET: Customers/Edit/5
         public ActionResult Edit(string id)
