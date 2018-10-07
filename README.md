@@ -2,7 +2,7 @@
 Git command for download and upload
 
 #step 1
-run command to your local machine git clone https://github.com/JaneralS/TeamProject
+run command to your local machine git clone https://github.com/YizhenS/TeamProject
 
 
 #step 2
